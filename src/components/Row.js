@@ -13,7 +13,7 @@ function Row(props) {
 
       <div>
         <img
-          src="/images/phone-flat.png"
+          src="./images/phone-flat.png"
           alt="phone"
           className="row_image"
         ></img>
