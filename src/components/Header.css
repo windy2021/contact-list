@@ -1,0 +1,26 @@
+.header_container{
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.header_input{
+    border-radius: 0.9em;
+    color: black;
+    font-weight: bold;
+    height: 24px;
+    border: 2px solid #3372ac;
+}
+
+.header_button{
+    margin-left: 15px;
+    padding: 5px 10px;
+    border-radius: 0.9em;
+    border: 1px solid #3372ac;
+    color: #3372ac;
+}
+
+.header_button:hover{
+    cursor: pointer;
+    background-color: #3372ac;
+    color: #fff;
+}

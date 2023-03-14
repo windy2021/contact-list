@@ -1,0 +1,35 @@
+.row_container{
+    background-color: rgb(221, 241, 247);
+    border-radius: 3em;
+    margin: 8px;
+    padding: 5px 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow:2px 5px #3372ac;
+}
+
+.row_text{
+    text-align: left;
+    padding-left: 25px;
+    margin: 1px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.row_image{
+    height: 50px;
+}
+
+.row_image:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+@media screen and (max-width: 450px) {
+    .row_text{
+        font-size: small;
+    }
+    .row_image{
+        height: 40px;
+    }
+}

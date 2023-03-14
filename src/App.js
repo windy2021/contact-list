@@ -1,23 +1,39 @@
-import logo from './logo.svg';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react'
 import './App.css';
+import Header from './components/Header';
+import Home from './pages/Home'
+
 
 function App() {
+  const [contacts, setContacts] = useState([]);
+  const [id, setId] = useState(-1);
+  useEffect(() => {
+
+    async function fetchContacts(){
+
+      if (id === -1 || id === ""){
+        const request = await axios.get("https://jsonplaceholder.typicode.com/users");
+        setContacts(request.data);
+      }
+      else {
+        const request = await axios.get(`https://jsonplaceholder.typicode.com/users?id=${id}`);
+        setContacts(request.data);
+      }
+    }
+
+    fetchContacts();
+
+  }, [id]);
+
+  function search(input){
+    setId(input);
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header onPress={search}></Header>
+      <Home data={contacts}></Home>
     </div>
   );
 }
