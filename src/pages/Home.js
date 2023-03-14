@@ -4,7 +4,6 @@ import Row from '../components/Row'
 function Home(props) {
     if (props.data.length > 0){
         const result = props.data.map((item, i)=>{
-            console.log(item.address);
             return(
                 <Row id={item["id"]} key={i}
                     name={item["name"]}
